@@ -19,7 +19,8 @@ class Solution:
             if maxProfit < maxPrice - prices[day]:
                 maxProfit = maxPrice - prices[day]
         return maxProfit
-    def maxProfit3(self, prices)
+    
+    def maxProfit3(self, prices):
         if len(prices) <= 1:
             return 0
         maxPrice = 0
@@ -28,4 +29,14 @@ class Solution:
             maxPrice = max(price, maxPrice)
             maxProfit = max(maxProfit, maxPrice - price)
         return maxProfit        
-print(Solution().maxProfit2([7,1,5,3,6,4]))
+
+    def maxProfit4(self, prices):
+        minprice = float('inf')
+        maxprofit = -float('inf')
+        for i in range(len(prices)):
+            minprice = min(minprice, prices[i])
+            maxprofit = max(maxprofit, prices[i] - minprice)
+        return maxprofit
+
+
+print(Solution().maxProfit4([0]))
