@@ -1,5 +1,4 @@
-lines = ['abre,', 'bobre,']
-word = 'bek'
-for line in lines:
-    word = line[:-1]
-    print(word)
+x = lambda a : a * 10
+y = x
+z = y(9)
+print(z) if z == 100 else print('boop')
