@@ -1,8 +1,14 @@
-words = ['sof','dru','pal']
-
-d = {}
-for w in words:
-    s_w = ''.join(sorted(w))
-    d[s_w] = w
-
-print(d)
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]: 
+        dic = {}
+        for word in strs:
+            s_w = ''.join(sorted(word))
+            if s_w in dic:
+                dic[s_w].append(word)
+            else:
+                dic[s_w] = [word]
+        res = []
+        
+        for value in dic.values():
+            res.append(value)
+        return res
